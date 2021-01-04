@@ -1,29 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
+import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
-import {SafeAreaView, ScrollView, View, Text, StatusBar} from 'react-native';
+import { StatusBar } from 'react-native';
+import 'react-native-gesture-handler';
+import Routes from './src/routes';
 
-const App: React.FC = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-          <View>
-            <Text>Teste</Text>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+import { BaseView } from './style';
+
+const App: React.FC = () => (
+  <NavigationContainer>
+    <StatusBar barStyle="dark-content" backgroundColor="#312e38" />
+
+    <BaseView>
+      <Routes />
+    </BaseView>
+  </NavigationContainer>
+);
 
 export default App;
